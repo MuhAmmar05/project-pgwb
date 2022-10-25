@@ -36,8 +36,8 @@ Route::get('/contact', function () {
 });
 
 Route::middleware('guest')->group(function(){
-    Route::get('login', [Login_Controller::class, 'index'])->name('login');
-    Route::post('login', [Login_Controller::class, 'authenticate']);
+    Route::get('Login', [Login_Controller::class, 'index'])->name('login');
+    Route::post('Login', [Login_Controller::class, 'authenticate']);
 
 });
 
