@@ -68,7 +68,7 @@
                                                     Me</label>
                                             </div>
                                         </div>
-                                        <input type="submit" value="LOGIN" class="btn btn-primary btn-user btn-block">
+                                        <input type="submit" value="Login" class="btn btn-primary btn-user btn-block">
                                     </form>
                                 </div>
                             </div>

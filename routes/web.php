@@ -36,8 +36,8 @@ Route::get('/contact', function () {
 });
 
 Route::middleware('guest')->group(function(){
-    Route::get('Login', [Login_Controller::class, 'index'])->name('Login');
-    Route::post('Login', [Login_Controller::class, 'authenticate']);
+    Route::get('login', [Login_Controller::class, 'index'])->name('login');
+    Route::post('login', [Login_Controller::class, 'authenticate']);
 
 });
 
@@ -45,19 +45,17 @@ Route::middleware('auth')->group(function () {
     Route::post('logout', [Login_Controller::class, 'logout']);
     Route::resource('dashboard', Dashboard_Controller::class);
     Route::get('mastersiswa/{id_siswa}/hapus', [Siswa_Controller::class, 'hapus'])->name('mastersiswa.hapus');
-    Route::resource('mastercontact', Contact_Controller::class);
     Route::resource('mastersiswa', Siswa_Controller::class);
     Route::resource('masterproject', Project_Controller::class);
     Route::get('masterproject/{id_siswa}/hapus', [Project_Controller::class, 'hapus'])->name('masterproject.hapus');
     Route::get('masterproject/tambah/{id_siswa}', [Project_Controller::class, 'tambah'])->name('masterproject.tambah');
+    Route::resource('mastercontact', Contact_Controller::class);
+
+    Route::get('/mastercontact/create/{id_siswa}', [Contact_Controller::class, 'create'])->name('mastercontact.create');
+    Route::get('/tambahjenis', [Contact_Controller::class, 'tambahjenisview']);
+    Route::post('/tambahjenis/store', [Contact_Controller::class, 'tambahjenis']);
+    Route::post('/mastercontact/store/{id_siswa}', [Contact_Controller::class, 'store'])->name('mastercontact.store');
+    Route::post('/mastercontact/hapus/{id_siswa}', [Contact_Controller::class, 'hapus'])->name('mastercontact.hapus');
+    
 });
 
-// Route::resource('dashboard', Dashboard_Controller::class);
-// Route::get('mastersiswa/{id_siswa}/hapus',[Siswa_Controller::class, 'hapus'])->name('mastersiswa.hapus');
-// Route::resource('mastercontact', Contact_Controller::class);
-// Route::resource('mastersiswa', Siswa_Controller::class);
-// Route::resource('masterproject', Project_Controller::class);
-// Route::get('masterproject/tambah/{id_siswa}', [Project_Controller::class, 'tambah'])->name('masterproject.tambah');
-// Route::get('Login', [Login_Controller::class, 'index']);
-// Route::post('Login', [Login_Controller::class, 'authenticate']);
-// Route::post('Logout', [Login_Controller::class, 'logout']);

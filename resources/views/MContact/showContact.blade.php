@@ -2,20 +2,30 @@
     <h6>Siswa Belum Memiliki Kontak</h6>
 @else
     @foreach($kontak as $item)
-    <div class="card">
+    <div class="card ">
         <div class="card-header">
-            <strong> {{ $item->jenis_kontak}}</strong>
+            <strong>Kontak siswa</strong>
         </div>
         <div class="card-body">
-            <strong>Jenis kontak</strong>
+            <strong>Jenis Kontak</strong>
             <p>{{ $item->jenis_kontak }}</p>
-            <strong>Deskripsi</strong>
+            <strong>Deskripsi Kontak</strong>
             <p>{{ $item->pivot->deskripsi }}</p>
         </div>
         {{-- <div class="card-footer">
-            <a href= "{{route('masterproject.edit', $item->id)}}" class="btn btn-warning"><i class="fas fa-edit"></i></a>
-            <a href= "{{route('masterproject.hapus', $item->id)}}" class="btn btn-danger"><i class="fas fa-trash"></i></a>
+            <a href= "{{route('mastercontact.edit', $item->id)}}" class="btn btn-warning"><i class="fas fa-edit"></i></a>
+            <a href= "{{route('mastercontact.hapus', $item->id)}}" class="btn btn-danger"><i class="fas fa-trash"></i></a>
         </div> --}}
-    </div><br>
+        <div class="card-footer">  
+            <form action="/mastercontact/{{$item->pivot->id}}" method="post">
+                @csrf
+                @method('hapus')    
+                    <button type="submit" class="btn btn-sm btn-danger btn-circle"><i class="fas fa-trash"></i></button>
+                    <a href="{{ route('mastercontact.edit', $item->id)}}" class="btn btn-sm btn-warning btn-circle"><i class="fas fa-edit"></i></a>
+                </form> 
+                
+        </div>
+    </div>
+    <br>
     @endforeach
     @endif
