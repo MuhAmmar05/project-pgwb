@@ -17,12 +17,11 @@
             <a href= "{{route('mastercontact.hapus', $item->id)}}" class="btn btn-danger"><i class="fas fa-trash"></i></a>
         </div> --}}
         <div class="card-footer">  
-            <form action="/mastercontact/{{$item->pivot->id}}" method="post">
-                @csrf
-                @method('hapus')    
+            <form action="/mastercontact/delete/{{$item->pivot->id}}" method="post">
+                @csrf  
                     <button type="submit" class="btn btn-sm btn-danger btn-circle"><i class="fas fa-trash"></i></button>
-                    <a href="{{ route('mastercontact.edit', $item->id)}}" class="btn btn-sm btn-warning btn-circle"><i class="fas fa-edit"></i></a>
                 </form> 
+                <a href="{{ route('mastercontact.edit', $item->id)}}" class="btn btn-sm btn-warning btn-circle"><i class="fas fa-edit"></i></a>
                 
         </div>
     </div>

@@ -51,11 +51,12 @@ Route::middleware('auth')->group(function () {
     Route::get('masterproject/tambah/{id_siswa}', [Project_Controller::class, 'tambah'])->name('masterproject.tambah');
     Route::resource('mastercontact', Contact_Controller::class);
 
-    Route::get('/mastercontact/create/{id_siswa}', [Contact_Controller::class, 'create'])->name('mastercontact.create');
+    Route::get('/mastercontact/create/{id_siswa}', [Contact_Controller::class, 'create'])->name('mastercontact.tambah');
     Route::get('/tambahjenis', [Contact_Controller::class, 'tambahjenisview']);
     Route::post('/tambahjenis/store', [Contact_Controller::class, 'tambahjenis']);
-    Route::post('/mastercontact/store/{id_siswa}', [Contact_Controller::class, 'store'])->name('mastercontact.store');
+    Route::post('/mastercontact/store/{id_siswa}', [Contact_Controller::class, 'store']);
     Route::post('/mastercontact/hapus/{id_siswa}', [Contact_Controller::class, 'hapus'])->name('mastercontact.hapus');
+    Route::post('/mastercontact/delete/{id_siswa}', [Contact_Controller::class, 'destroy']);
     
 });
 

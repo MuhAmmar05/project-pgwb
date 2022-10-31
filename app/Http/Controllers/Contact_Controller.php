@@ -127,7 +127,9 @@ class Contact_Controller extends Controller
      */
     public function destroy($id)
     {
-        
+        kontak::find($id)->delete();
+        Session::flash('success', "Kontak Berhasil Di Hapus !");
+        return redirect('/mastercontact');
     }
 
     /**

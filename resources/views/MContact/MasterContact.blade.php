@@ -75,7 +75,7 @@
                             	<td>{{ $item->nama }}</td>
                             	<td class="text-center">
                                 	<a class="btn btn-info" onclick="show({{ $item->id }})"><i class="fas fa-folder-open"></i></a>
-                                	<a class="btn btn-info" href="{{route('mastercontact.create', $item->id)}}"><i class="fas fa-plus"></i></a>
+                                	<a class="btn btn-info" href="{{route('mastercontact.tambah', $item->id)}}"><i class="fas fa-plus"></i></a>
                             	</td>
                         	</tr>
                         	@endforeach

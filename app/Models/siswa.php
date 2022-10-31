@@ -19,7 +19,7 @@ class siswa extends Model
     protected $table = 'siswa';
 
     public function kontak(){
-        return $this->belongsToMany('App\Models\jenis_kontak')->withPivot('deskripsi');
+        return $this->belongsToMany('App\Models\jenis_kontak')->withPivot('deskripsi', 'id');
     }
     public function project(){
         return $this->hasMany('App\Models\project', 'id_siswa');
