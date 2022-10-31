@@ -89,7 +89,7 @@ class Contact_Controller extends Controller
     {
         $kontak = kontak::find($id);
         $jenis = jenis_kontak::all();
-        return view('MContact.editcontact', compact('kontak', 'jenis'));
+        return view('MContact.editContact', compact('kontak', 'jenis'));
     }
 
     /**

@@ -2,6 +2,12 @@
 @section('title', 'Project')
 @section('content-title', 'Master project')
 @section('content')	
+@if ($message = Session::get('success'))
+        <div class="alert alert-success alert-block">
+            <button type="button" class="close" data-dismiss="alert">x</button>
+            <strong>{{ $message }}</strong>
+        </div>
+    @endif
 	<div class="row">
 
 		<div class="col-lg-5">
