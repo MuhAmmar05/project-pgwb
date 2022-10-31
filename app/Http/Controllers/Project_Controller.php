@@ -142,6 +142,6 @@ class Project_Controller extends Controller
     public function tambah($id)
     {
         $siswa = siswa::find($id);
-        return view('MProject.TambahProject',compact('siswa'));
+        return view('MProject.tambahProject',compact('siswa'));
     }
 }
