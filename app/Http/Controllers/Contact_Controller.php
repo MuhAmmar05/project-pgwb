@@ -172,6 +172,6 @@ class Contact_Controller extends Controller
 
     public function tambahjenisview()
     {
-        return view('MContact.tambahJeniscontact');
+        return view('MContact.tambahJenisContact');
     }
 }
